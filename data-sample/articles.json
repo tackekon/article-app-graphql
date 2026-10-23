@@ -1,0 +1,42 @@
+[
+  {
+    "_id": {
+      "$oid": "6545d26fd3edd487ec1691b4"
+    },
+    "title": "Hàm strstr()",
+    "avatar": "https://backend.daca.vn/assets/images/ham-strstr.png",
+    "description": "Hàm strstr() trong C được dùng để kiểm tra sự tồn tại của một xâu ký tự trong một xâu ký tự khác.",
+    "categoryId": "65468d5f834f8b56a156e56a",
+    "deleted": false
+  },
+  {
+    "_id": {
+      "$oid": "6545d26fd3edd487ec1691b5"
+    },
+    "title": "Hàm strlwr() và strupr()",
+    "avatar": "https://backend.daca.vn/assets/images/ham-strlwr-va-strupr.png",
+    "description": "Bài viết này mình sẽ hướng dẫn các bạn sử dụng hàm strlwr() và hàm strupr() để chuyển chuỗi thành in hoa hoặc in thường.",
+    "categoryId": "65468d5f834f8b56a156e56a",
+    "deleted": false
+  },
+  {
+    "_id": {
+      "$oid": "6545d26fd3edd487ec1691b6"
+    },
+    "title": "Hàm strcpy() và strncpy()",
+    "avatar": "https://backend.daca.vn/assets/images/ham-strcpy-va-strncpy.png",
+    "description": "Hàm strcpy() được sử dụng để copy chuỗi trong C, bài học này mình sẽ hướng dẫn cách sử dụng cũng như tự xây dựng hàm này.",
+    "categoryId": "65468d5f834f8b56a156e56a",
+    "deleted": false
+  },
+  {
+  "_id": {
+    "$oid": "65468fbb834f8b56a156e571"
+  },
+  "title": "Hàm Sort Trong C++",
+  "avatar": "https://backend.daca.vn/assets/images/ham-sort-trong-c++.png",
+  "description": "Hàm sort() trong thư viện algorithm của ngôn ngữ lập trình C++ là một hàm thuật toán rất hiệu quả và được sử dụng thường xuyên trong lập trình. Bài học này sẽ hướng dẫn các bạn cách sử dụng hàm sort() để sắp xếp với mảng, vector, string.",
+  "categoryId": "65468d5f834f8b56a156e56b",
+  "deleted": false
+  }
+]
