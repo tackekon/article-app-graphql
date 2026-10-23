@@ -8,6 +8,6 @@ export const typeDefs = `#graphql
     }
 
     type Query {
-      articles: [Article!]!
+      getListArticle: [Article!]!
     }
   `;
