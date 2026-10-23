@@ -1,0 +1,34 @@
+[
+  {
+    "_id": {
+      "$oid": "65468d5f834f8b56a156e56a"
+    },
+    "title": "Ngôn ngữ C",
+    "avatar": "https://backend.daca.vn/assets/images/icon-c.png",
+    "deleted": false
+  },
+  {
+    "_id": {
+      "$oid": "65468d5f834f8b56a156e56b"
+    },
+    "title": "Ngôn ngữ C++",
+    "avatar": "https://backend.daca.vn/assets/images/icon-c++.png",
+    "deleted": false
+  },
+  {
+    "_id": {
+      "$oid": "65468d5f834f8b56a156e56c"
+    },
+    "title": "NodeJS",
+    "avatar": "https://backend.daca.vn/assets/images/nodejs.png",
+    "deleted": false
+  },
+  {
+    "_id": {
+      "$oid": "65468d5f834f8b56a156e56d"
+    },
+    "title": "Typescript",
+    "avatar": "https://backend.daca.vn/assets/images/typescript.png",
+    "deleted": false
+  }
+]
