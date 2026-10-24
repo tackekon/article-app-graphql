@@ -12,9 +12,10 @@ export const typeDefsArticle = `#graphql
       sortKey: String, 
       sortValue: String,
       currentPage: Int = 1,
-      limitItems: Int = 2,
+      limitItems: Int = 10,
       filterKey: String,
-      filterValue: String
+      filterValue: String,
+      keyword: String
       ): [Article],
     getArticle(id: ID): Article,
   }
