@@ -8,7 +8,12 @@ export const typeDefsArticle = `#graphql
   }
 
   type Query {
-    getListArticle(sortKey: String, sortValue: String): [Article],
+    getListArticle(
+      sortKey: String, 
+      sortValue: String,
+      currentPage: Int = 1,
+      limitItems: Int = 2
+      ): [Article],
     getArticle(id: ID): Article,
   }
 
