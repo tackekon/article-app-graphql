@@ -1,10 +1,11 @@
-import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@as-integrations/express5";
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import * as database from "./config/database";
-import { typeDefs } from "./typeDefs";
+import { ApolloServer } from "@apollo/server";
+
 import { resolvers } from "./resolvers";
+import { typeDefs } from "./typeDefs/index.typeDefs";
 
 const startServer = async (): Promise<void> => {
   dotenv.config();
@@ -14,7 +15,10 @@ const startServer = async (): Promise<void> => {
 
   await database.connect();
 
-  const apolloServer = new ApolloServer({ typeDefs, resolvers });
+  const apolloServer = new ApolloServer({ 
+    typeDefs : [typeDefs], 
+    resolvers 
+  });
 
   // phải dùng await trước start server
   await apolloServer.start();
