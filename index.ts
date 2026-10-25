@@ -20,7 +20,8 @@ const startServer = async (): Promise<void> => {
 
   const apolloServer = new ApolloServer({ 
     typeDefs : typeDefs, 
-    resolvers : resolvers
+    resolvers : resolvers, 
+    introspection: true 
   });
 
   // phải dùng await trước function start 

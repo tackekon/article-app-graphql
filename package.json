@@ -8,8 +8,16 @@
   "main": "index.js",
   "scripts": {
     "start": "tsx watch index.ts",
+    "build": "tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+  ],
   "dependencies": {
     "@apollo/server": "^5.5.1",
     "@as-integrations/express5": "^1.1.2",
@@ -22,6 +30,7 @@
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^26.6.5",
+    "pre-commit": "^2.0.0",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   }
