@@ -3,6 +3,7 @@ import express, { Express } from "express";
 import dotenv from "dotenv";
 import * as database from "./config/database";
 import { ApolloServer } from "@apollo/server";
+import { ApolloServerPluginLandingPageLocalDefault } from "@apollo/server/plugin/landingPage/default";
 
 import { typeDefs } from "./typeDefs/index.typeDefs";
 import { resolvers } from "./resolvers/index.resolver";
@@ -21,7 +22,23 @@ const startServer = async (): Promise<void> => {
   const apolloServer = new ApolloServer({ 
     typeDefs : typeDefs, 
     resolvers : resolvers, 
-    introspection: true 
+    introspection: true,
+    plugins: [
+      ApolloServerPluginLandingPageLocalDefault({
+        embed: {
+          initialState: {
+            pollForSchemaUpdates: true,
+          },
+        },
+        document: `query GetArticles {
+          getListArticle(limitItems: 10) {
+            id
+            title
+            description
+          }
+        }`,
+      }),
+    ],
   });
 
   // phải dùng await trước function start 
@@ -58,4 +75,3 @@ startServer().catch((error: unknown) => {
 //     articles: articles
 //   });
 // });
-
