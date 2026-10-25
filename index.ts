@@ -6,6 +6,7 @@ import { ApolloServer } from "@apollo/server";
 
 import { typeDefs } from "./typeDefs/index.typeDefs";
 import { resolvers } from "./resolvers/index.resolver";
+import { requireAuth } from "./middlewares/auth.middleware";
 
 const startServer = async (): Promise<void> => {
   dotenv.config();
@@ -15,6 +16,8 @@ const startServer = async (): Promise<void> => {
 
   await database.connect();
 
+  app.use("/graphql", requireAuth);
+
   const apolloServer = new ApolloServer({ 
     typeDefs : typeDefs, 
     resolvers : resolvers
@@ -23,7 +26,16 @@ const startServer = async (): Promise<void> => {
   // phải dùng await trước function start 
   await apolloServer.start();
 
-  app.use("/graphql", express.json(), expressMiddleware(apolloServer));
+  app.use("/graphql", express.json(), 
+    expressMiddleware(apolloServer,{
+      context: async ({ req }) => {
+        return { ...req };
+      }
+    })
+  );
+
+
+
   app.listen(port, () => {
     console.log(`App listening on port ${port}`);
   });

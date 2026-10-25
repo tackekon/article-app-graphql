@@ -9,7 +9,7 @@ export const typeDefsUser = `#graphql
   }
 
   type Query {
-    getUser(id: ID): User
+    getUser: User
   }
 
   input RegisterUserInput {
